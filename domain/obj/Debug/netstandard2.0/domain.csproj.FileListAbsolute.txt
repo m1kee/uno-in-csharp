@@ -1,0 +1,9 @@
+C:\dev\uno-in-csharp\domain\bin\Debug\netstandard2.0\domain.deps.json
+C:\dev\uno-in-csharp\domain\bin\Debug\netstandard2.0\domain.dll
+C:\dev\uno-in-csharp\domain\bin\Debug\netstandard2.0\domain.pdb
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.csprojAssemblyReference.cache
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.csproj.CoreCompileInputs.cache
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.AssemblyInfoInputs.cache
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.AssemblyInfo.cs
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.dll
+C:\dev\uno-in-csharp\domain\obj\Debug\netstandard2.0\domain.pdb
