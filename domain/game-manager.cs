@@ -33,7 +33,7 @@ public class GameManager
                 Players.Add(new Player()
                 {
                     Position = Players.Count + 1,
-                    PlayerType = PlayerType.Human
+                    PlayerType = PlayerType.Bot
                 });
             } while (Players.Count < 4);
         }
@@ -116,7 +116,7 @@ public class GameManager
             var currentPlayer = Players[i];
             if (currentPlayer.PlayerType == PlayerType.Human)
             {
-                Console.WriteLine($"Human { i } Turn.");
+                Console.WriteLine($"Human { currentPlayer.Position } Turn.");
                 Console.WriteLine($"> Press F to automatically do the worst play.");
                 Console.ReadLine();
                 currentTurn = Players[i].PlayTurn(currentTurn, DrawPile);
