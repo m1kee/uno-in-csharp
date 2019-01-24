@@ -11,7 +11,6 @@ namespace console
 
             GameManager gameManager = new GameManager(4);
             gameManager.PlayGame();
-            
         }
     }
 }
