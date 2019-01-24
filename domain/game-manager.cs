@@ -20,9 +20,25 @@ public class GameManager
         {
             Players.Add(new Player()
             {
-                Position = i
+                Position = i,
+                PlayerType = PlayerType.Human
             });
         }
+
+        //Create bot players if necessary
+        if (Players.Count < 4)
+        {
+            do
+            {
+                Players.Add(new Player()
+                {
+                    Position = Players.Count + 1,
+                    PlayerType = PlayerType.Human
+                });
+            } while (Players.Count < 4);
+        }
+
+        Console.WriteLine($"Players Created: { Players.Count }");
 
         int maxCards = 7 * Players.Count;
         int dealtCards = 0;
@@ -30,7 +46,7 @@ public class GameManager
         //Deal 7 cards to each player
         while (dealtCards < maxCards)
         {
-            for (int i = 0; i < numPlayers; i++)
+            for (int i = 0; i < Players.Count; i++)
             {
                 Players[i].Hand.Add(DrawPile.Cards.First());
                 DrawPile.Cards.RemoveAt(0);
@@ -64,6 +80,7 @@ public class GameManager
         }
 
         //Game won't start until user presses Enter
+        Console.WriteLine("Press F to start the game.");
         Console.ReadLine();
 
         //We need a "mock" PlayerTurn representing the first discard
@@ -97,7 +114,15 @@ public class GameManager
 
             //Now the current player can take their turn
             var currentPlayer = Players[i];
-            currentTurn = Players[i].PlayTurn(currentTurn, DrawPile);
+            if (currentPlayer.PlayerType == PlayerType.Human)
+            {
+                Console.WriteLine($"Human { i } Turn.");
+                Console.WriteLine($"> Press F to automatically do the worst play.");
+                Console.ReadLine();
+                currentTurn = Players[i].PlayTurn(currentTurn, DrawPile);
+            }
+            else
+                currentTurn = Players[i].PlayTurn(currentTurn, DrawPile);
 
             //We must add the current player's discarded card to the discard pile.
             AddToDiscardPile(currentTurn);

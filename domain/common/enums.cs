@@ -60,4 +60,10 @@ namespace Domain.Common
         //Player played a reverse card.
         Reversed
     }
+
+    public enum PlayerType
+    {
+        Human,
+        Bot
+    }
 }

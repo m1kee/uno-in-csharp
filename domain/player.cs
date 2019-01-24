@@ -5,6 +5,7 @@ using Domain.Common;
 
 public class Player
 {
+    public PlayerType PlayerType { get;set; }
     public List<Card> Hand { get; set; }
 
     //This determines the starting turn order
